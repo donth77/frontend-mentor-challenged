@@ -11,14 +11,69 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Product preview card component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <link href="./dist/output.css" rel="stylesheet" />
   </head>
   <body>
     <main class="w-full h-screen bg-cream flex justify-center items-center">
-      <div class="card w-[600px] h-[450px] rounded-xl bg-white"></div>
-      <!-- Preview Gabrielle Essence Eau De Parfum A floral, solar and voluptuous
-    interpretation composed by Olivier Polge, Perfumer-Creator for the House of
-    CHANEL. $149.99 $169.99 Add to Cart -->
+      <div
+        class="w-[343px] h-[611px] sm:w-[600px] sm:h-[450px] rounded-xl bg-white flex flex-col sm:flex-row"
+      >
+        <img
+          class="w-full sm:w-[300px] h-[240px] sm:h-[450px] rounded-t-xl sm:rounded-l-xl sm:rounded-r-none object-cover sm:object-none"
+          src="images/image-product-desktop.jpg"
+          alt="Product"
+        />
+        <div class="flex flex-col p-[24px] sm:p-[32px]">
+          <span
+            class="text-[12px] tracking-[5px] leading-[14.63px] font-montserrat uppercase text-darkGrayishBlue"
+            >Perfume</span
+          >
+          <h1
+            class="my-[12px] sm:my-[20px] text-[32px] leading-[32px] font-fraunces"
+          >
+            Gabrielle Essence Eau De Parfum
+          </h1>
+
+          <p
+            class="text-[14px] leading-[23px] font-montserrat text-darkGrayishBlue"
+          >
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+
+          <div class="my-[24px] sm:my-[29px] flex items-center">
+            <span
+              class="mr-[19px] text-[32px] leading-[32px] font-fraunces text-darkCyan"
+            >
+              $149.99</span
+            >
+            <span
+              class="text-[13px] leading-[23px] font-montserrat text-darkGrayishBlue line-through"
+            >
+              $169.99</span
+            >
+          </div>
+          <button
+            class="w-full h-[48px] bg-darkCyan hover:bg-deepAquamarineHover rounded-lg flex justify-center items-center"
+          >
+            <img
+              class="mr-[11px]"
+              src="./images/icon-cart.svg"
+              alt="Cart Icon"
+            />
+            <span
+              class="text=[14px] leading-[17.07px] font-montserrat font-bold text-white"
+              >Add to Cart</span
+            >
+          </button>
+        </div>
+      </div>
     </main>
   </body>
 </html>

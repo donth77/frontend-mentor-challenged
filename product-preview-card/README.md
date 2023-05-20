@@ -2,16 +2,6 @@
 
 [Product preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa)
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [Process](#my-process)
-  - [Built with](#built-with)
-  - [Useful resources](#useful-resources)
-
 ## Overview
 
 ### The challenge
@@ -23,7 +13,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot](./images/screenshot.png)
 
 ## Process
 
@@ -34,4 +24,4 @@ Users should be able to:
 
 ### Useful resources
 
--
+- [Tailwind CSS](https://tailwindcss.com/)
