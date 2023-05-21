@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main
+      class="w-full h-screen bg-cream flex justify-center items-center bg-veryLightBlue"
+    >
+      <div
+        class="w-full max-w-[375px] sm:max-w-[736px] h-[809px] sm:h-[512px] bg-white flex flex-col sm:flex-row sm:rounded-3xl"
+      >
+        <div
+          class="w-full max-w-[375px] h-[356px] sm:h-full bg-gradient-to-b from-lightSlateBlue to-lightRoyalBlue rounded-b-3xl sm:rounded-3xl flex justify-center items-center flex-col"
+        >
+          <span
+            class="text-[18px] leading-[23.45px] sm:text-[24px] sm:leading-[31.27px] font-hankenGrotesk text-lightLavender font-bold"
+            >Your Result</span
+          >
+          <div
+            class="my-[24px] sm:my-[35px] w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] bg-gradient-to-b from-violetBlue to-persianBlue rounded-full flex justify-center items-center flex-col"
+          >
+            <span
+              class="text-[56px] leading-[72px] sm:text-[72px] font-hankenGrotesk text-white font-extrabold"
+              >76</span
+            >
+            <span
+              class="text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-lightLavender font-bold opacity-51.68"
+              >of 100</span
+            >
+          </div>
+          <h1
+            class="mb-[8px] text-[24px] sm:text-[32px] leading-[31.27px] sm:leading-[41.7px] font-hankenGrotesk text-white font-bold"
+          >
+            Great
+          </h1>
+          <p
+            class="px-[55px] sm:px-[45px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] text-center font-hankenGrotesk text-lightLavender font-medium"
+          >
+            Your performance exceeds 65% of the people conducting the test here!
+          </p>
+        </div>
+        <div class="p-[30px] pt-[24px] w-full flex flex-col">
+          <h2
+            class="text-[18px] sm:text-[24px] leading-[23.45px] sm:leading-[31.27px] font-hankenGrotesk text-darkGrayBlue font-bold"
+          >
+            Summary
+          </h2>
+          <div
+            class="mt-[24px] sm:mt-[28px] w-full h-[56px] bg-redBg rounded-xl flex justify-between items-center px-[16px]"
+          >
+            <div class="flex">
+              <img
+                class="fill-lightRed"
+                src="assets/images/icon-reaction.svg"
+                alt="Reaction Icon"
+              />
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-lightRed font-medium"
+              >
+                Reaction
+              </span>
+            </div>
+            <div class="flex">
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-darkGrayBlue font-bold"
+                >80</span
+              >
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-darkGrayBlue font-bold opacity-50"
+                >/ 100</span
+              >
+            </div>
+          </div>
+          <div
+            class="mt-[16px] w-full h-[56px] bg-yellowBg rounded-xl flex justify-between items-center px-[16px]"
+          >
+            <div class="flex">
+              <img
+                class="fill-orangeyYellow"
+                src="assets/images/icon-memory.svg"
+                alt="Memory Icon"
+              />
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-orangeyYellow font-medium"
+              >
+                Memory
+              </span>
+            </div>
+            <div class="flex">
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-darkGrayBlue font-bold"
+                >92</span
+              >
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-darkGrayBlue font-bold opacity-50"
+                >/ 100</span
+              >
+            </div>
+          </div>
+          <div
+            class="mt-[16px] w-full h-[56px] bg-greenBg rounded-xl flex justify-between items-center px-[16px]"
+          >
+            <div class="flex">
+              <img
+                class="fill-greenTeal"
+                src="assets/images/icon-verbal.svg"
+                alt="Verbal Icon"
+              />
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-greenTeal font-medium"
+              >
+                Verbal
+              </span>
+            </div>
+            <div class="flex">
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-darkGrayBlue font-bold"
+                >61</span
+              >
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-darkGrayBlue font-bold opacity-50"
+                >/ 100</span
+              >
+            </div>
+          </div>
+          <div
+            class="mt-[16px] w-full h-[56px] bg-blueBg rounded-xl flex justify-between items-center px-[16px]"
+          >
+            <div class="flex">
+              <img
+                class="fill-cobaltBlue"
+                src="assets/images/icon-visual.svg"
+                alt="Visual Icon"
+              />
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-cobaltBlue font-medium"
+              >
+                Visual
+              </span>
+            </div>
+            <div class="flex">
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-darkGrayBlue font-bold"
+                >73</span
+              >
+              <span
+                class="ml-[12px] text-[16px] sm:text-[18px] leading-[20.85px] sm:leading-[23.45px] font-hankenGrotesk text-darkGrayBlue font-bold opacity-50"
+                >/ 100</span
+              >
+            </div>
+          </div>
+          <button
+            class="mt-[24px] sm:mt-[41px] w-full h-[56px] bg-darkGrayBlue rounded-[50px] flex justify-center items-center hover:bg-gradient-to-b from-lightSlateBlue to-lightRoyalBlue"
+          >
+            <span
+              class="text-[18px] leading-[23.45px] font-hankenGrotesk text-white font-bold"
+            >
+              Continue
+            </span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

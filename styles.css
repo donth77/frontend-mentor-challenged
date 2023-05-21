@@ -13,16 +13,16 @@ ul {
 a {
   text-decoration: none;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-}
 .header {
   font-family: "Barlow", sans-serif;
+  padding: 0 20px;
 }
 .list {
   width: 100%;
+  max-width: 700px;
+  max-height: 800px;
   padding: 0 20px;
+  overflow-y: scroll;
 }
 .card-img {
   width: 35%;
@@ -52,4 +52,17 @@ a {
   font-family: "Barlow", sans-serif;
   font-size: 25px;
   color: var(--black);
+}
+
+.list::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.list::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
