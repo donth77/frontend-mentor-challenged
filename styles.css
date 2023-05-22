@@ -20,9 +20,7 @@ a {
 .list {
   width: 100%;
   max-width: 700px;
-  max-height: 800px;
   padding: 0 20px;
-  overflow-y: scroll;
 }
 .card-img {
   width: 35%;

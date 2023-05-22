@@ -21,13 +21,14 @@
       rel="stylesheet"
     />
     <link href="./dist/output.css" rel="stylesheet" />
+    <script src="./script.js" async></script>
   </head>
   <body>
     <main
       class="w-full h-screen flex justify-center items-center bg-veryLightBlue"
     >
       <div
-        class="max-w-[327px] sm:max-w-[730px] h-[512px] sm:h-[280px] flex flex-col sm:flex-row bg-white rounded-xl shadow-mild overflow-hidden"
+        class="max-w-[327px] sm:max-w-[730px] h-[512px] sm:h-[280px] flex flex-col sm:flex-row bg-white rounded-xl shadow-mild overflow-hidden sm:overflow-visible"
       >
         <img
           class="h-[200px] sm:max-w-[285px] sm:h-full object-cover rounded-t-xl sm:rounded-r-none"
@@ -36,55 +37,135 @@
         />
 
         <div
-          class="px-[32px] sm:px-[40px] pt-[36px] sm:pt[32-px] pb-[20px] sm:pb-[32px] relative h-full"
+          class="pt-[36px] sm:pt[32-px] pb-[20px] sm:pb-[32px] relative h-full"
         >
-          <h1
-            class="text-base sm:text-xl leading-[24px] sm:leading-[28px] tracking-[0.2px] sm:tracking-[0.25px] font-manrope font-bold text-veryDarkGrayishBlue"
-          >
-            Shift the overall look and feel by adding these wonderful touches to
-            furniture in your home
-          </h1>
-          <p
-            class="my-[12px] text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-medium text-desaturatedDarkBlue"
-          >
-            Even been in a room and felt like something was missing? Perhaps it
-            felt slightly bare and uninviting. I've got some simple tips to help
-            you make any room feel complete.
-          </p>
-
-          <div
-            class="mt-[32px] sm:mt-[20px] absolute bottom-0 w-full translate-x-[-32px] sm:translate-x-[-40px] px-[32px] sm:px-[40px]"
-          >
-            <div
-              class="mb-[20px] sm:mb-[32px] flex items-center justify-between bg-white"
+          <div class="px-[32px] sm:px-[40px]">
+            <h1
+              class="text-base sm:text-xl leading-[24px] sm:leading-[28px] tracking-[0.2px] sm:tracking-[0.25px] font-manrope font-bold text-veryDarkGrayishBlue"
             >
-              <div class="flex">
-                <img
-                  class="mr-[16px] w-[40px] h-[40px] rounded-full"
-                  src="images/avatar-michelle.jpg"
-                  alt="Author Image"
+              Shift the overall look and feel by adding these wonderful touches
+              to furniture in your home
+            </h1>
+            <p
+              class="my-[12px] text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-medium text-desaturatedDarkBlue"
+            >
+              Even been in a room and felt like something was missing? Perhaps
+              it felt slightly bare and uninviting. I've got some simple tips to
+              help you make any room feel complete.
+            </p>
+          </div>
+          <div class="group">
+            <button
+              aria-label="Share Button"
+              class="w-[32px] h-[32px] z-20 absolute right-8 sm:right-10 bottom-6 sm:bottom-9 bg-lightGrayishBlue group-focus-within:bg-desaturatedDarkBlue rounded-full flex items-center justify-center after:absolute after:p-[25px]"
+            >
+              <svg
+                class="fill-desaturatedDarkBlue group-focus-within:fill-white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="13"
+              >
+                <path
+                  d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
                 />
-                <div class="flex flex-col">
+              </svg>
+              <span
+                class="relative invisible sm:visible pointer-events-none sm:pointer-events-auto"
+              >
+                <span class="hidden group-focus-within:block animate-slideIn">
                   <span
-                    class="text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-bold text-veryDarkGrayishBlue"
-                    >Michelle Appleton</span
+                    class="absolute w-[248px] h-[55px] flex items-center px-9 py-[18px] translate-x-[-131px] translate-y-[-97px] bg-veryDarkGrayishBlue rounded-xl z-10 cursor-default"
                   >
+                    <span
+                      class="mr-[21px] uppercase text-[13px] leading-[20px] tracking-[5px] font-manrope font-medium text-grayishBlue"
+                      >Share</span
+                    >
+                    <span class="flex items-center">
+                      <span class="social cursor-pointer" id="fb">
+                        <img
+                          class="mr-9"
+                          src="images/icon-facebook.svg"
+                          alt="Facebook Icon"
+                        />
+                      </span>
+                      <span class="social cursor-pointer" id="twitter">
+                        <img
+                          class="mr-9"
+                          src="images/icon-twitter.svg"
+                          alt="Twitter Icon"
+                        />
+                      </span>
+                      <span class="social cursor-pointer" id="pinterest">
+                        <img
+                          class="mr-9"
+                          src="images/icon-pinterest.svg"
+                          alt="Pinterest Icon"
+                        />
+                      </span>
+                    </span>
+                  </span>
                   <span
-                    class="text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-medium text-grayishBlue"
-                    >28 Jun 2020</span
-                  >
+                    class="absolute translate-x-[-20px] translate-y-[-44px] border-[12px] border-transparent border-t-veryDarkGrayishBlue z-10 cursor-default"
+                  ></span>
+                </span>
+              </span>
+            </button>
+            <div>
+              <div
+                class="visible sm:invisible hidden pointer-events-auto sm:pointer-events-none flex group-focus-within:flex items-center z-10 absolute bottom-0 w-full h-[76px] px-8 bg-veryDarkGrayishBlue animate-slideUp"
+              >
+                <span
+                  class="mr-[21px] uppercase text-[13px] leading-[20px] tracking-[5px] font-manrope font-medium text-grayishBlue"
+                  >Share</span
+                >
+                <div class="flex items-center">
+                  <a class="social" id="fb-m" href="#">
+                    <img
+                      class="mr-4"
+                      src="images/icon-facebook.svg"
+                      alt="Facebook Icon"
+                    />
+                  </a>
+                  <a class="social" id="twitter-m" href="#">
+                    <img
+                      class="mr-4"
+                      src="images/icon-twitter.svg"
+                      alt="Twitter Icon"
+                    />
+                  </a>
+                  <a class="social" id="pinterest-m" href="#">
+                    <img
+                      class="mr-4"
+                      src="images/icon-pinterest.svg"
+                      alt="Pinterest Icon"
+                    />
+                  </a>
                 </div>
               </div>
-              <button
-                class="w-[32px] h-[32px] bg-lightGrayishBlue rounded-full flex items-center justify-center after:absolute after:p-[25px]"
+            </div>
+
+            <div class="mt-8 sm:mt-5 absolute bottom-0 w-full px-8 sm:px-10">
+              <div
+                class="mb-5 sm:mb-8 flex items-center justify-between bg-transparent group-focus-within:bg-transparent"
               >
-                <input class="absolute hidden" type="checkbox" />
-                <img
-                  class="fill-grayishBlue"
-                  src="images/icon-share.svg"
-                  alt="Share Icon"
-                />
-              </button>
+                <div class="flex">
+                  <img
+                    class="mr-4 w-10 h-10 rounded-full"
+                    src="images/avatar-michelle.jpg"
+                    alt="Author Image"
+                  />
+                  <div class="flex flex-col">
+                    <span
+                      class="text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-bold text-veryDarkGrayishBlue"
+                      >Michelle Appleton</span
+                    >
+                    <span
+                      class="text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-medium text-grayishBlue"
+                      >28 Jun 2020</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
