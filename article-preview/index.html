@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Article preview component</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main
+      class="w-full h-screen flex justify-center items-center bg-veryLightBlue"
+    >
+      <div
+        class="max-w-[327px] sm:max-w-[730px] h-[512px] sm:h-[280px] flex flex-col sm:flex-row bg-white rounded-xl shadow-mild overflow-hidden"
+      >
+        <img
+          class="h-[200px] sm:max-w-[285px] sm:h-full object-cover rounded-t-xl sm:rounded-r-none"
+          src="images/drawers.jpg"
+          alt="Drawers Image"
+        />
+
+        <div
+          class="px-[32px] sm:px-[40px] pt-[36px] sm:pt[32-px] pb-[20px] sm:pb-[32px] relative h-full"
+        >
+          <h1
+            class="text-base sm:text-xl leading-[24px] sm:leading-[28px] tracking-[0.2px] sm:tracking-[0.25px] font-manrope font-bold text-veryDarkGrayishBlue"
+          >
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h1>
+          <p
+            class="my-[12px] text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-medium text-desaturatedDarkBlue"
+          >
+            Even been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I've got some simple tips to help
+            you make any room feel complete.
+          </p>
+
+          <div
+            class="mt-[32px] sm:mt-[20px] absolute bottom-0 w-full translate-x-[-32px] sm:translate-x-[-40px] px-[32px] sm:px-[40px]"
+          >
+            <div
+              class="mb-[20px] sm:mb-[32px] flex items-center justify-between bg-white"
+            >
+              <div class="flex">
+                <img
+                  class="mr-[16px] w-[40px] h-[40px] rounded-full"
+                  src="images/avatar-michelle.jpg"
+                  alt="Author Image"
+                />
+                <div class="flex flex-col">
+                  <span
+                    class="text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-bold text-veryDarkGrayishBlue"
+                    >Michelle Appleton</span
+                  >
+                  <span
+                    class="text-[13px] leading-[20px] tracking-[0.12px] font-manrope font-medium text-grayishBlue"
+                    >28 Jun 2020</span
+                  >
+                </div>
+              </div>
+              <button
+                class="w-[32px] h-[32px] bg-lightGrayishBlue rounded-full flex items-center justify-center after:absolute after:p-[25px]"
+              >
+                <input class="absolute hidden" type="checkbox" />
+                <img
+                  class="fill-grayishBlue"
+                  src="images/icon-share.svg"
+                  alt="Share Icon"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
