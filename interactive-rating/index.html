@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <script src="./script.js" async></script>
+  </head>
+  <body>
+    <main
+      class="w-full h-screen flex justify-center items-center bg-veryDarkBlue"
+    >
+      <div class="w-[412px] h-[416px] p-8 bg-gradientBlack rounded-[30px]">
+        <div
+          id="thanks-msg"
+          class="hidden w-[412px] h-[416px] bg-gradientBlack rounded-[30px] absolute translate-x-[-32px] translate-y-[-32px]"
+        >
+          <div class="py-[34px] px-6 flex flex-col items-center">
+            <img
+              class="w-36"
+              src="images/illustration-thank-you.svg"
+              alt="Thank You Image"
+            />
+            <div
+              class="mt-6 w-[168px] h-8 bg-darkBlue rounded-[22.5px] flex justify-center items-center"
+            >
+              <span
+                class="mt-[2px] text-sm font-overpass text-orange"
+                id="selected-txt"
+                >You selected 4 out of 5</span
+              >
+            </div>
+            <h1
+              class="mt-[32px] text-[28px] leading-[30.38px] font-overpass font-semibold text-white"
+            >
+              Thank you!
+            </h1>
+            <p
+              class="mt-[16px] text-[18px] leading-[28px] font-overpass text-lightGrey text-center"
+            >
+              We appreciate you taking the time to give a rating. If you ever
+              need more support, don't hesitate to get in touch!
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="w-12 h-12 bg-darkBlue rounded-full flex justify-center items-center"
+        >
+          <img src="images/icon-star.svg" alt="Star Icon" />
+        </div>
+        <h1
+          class="mt-[30px] text-[28px] leading-[35.45px] font-overpass font-semibold text-white"
+        >
+          How did we do?
+        </h1>
+        <p class="mt-2 text-[15px] leading-6 font-overpass text-lightGrey">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <div class="mt-6 flex justify-between">
+          <button
+            class="rating-btn w-[51px] h-[51px] rounded-full bg-darkBlue flex justify-center items-center hover:bg-orange group"
+            value="1"
+          >
+            <span
+              class="text-base leading-6 tracking-[0.2px] font-overpass font-bold text-mediumGrey group-hover:text-white"
+              >1</span
+            >
+          </button>
+          <button
+            class="rating-btn w-[51px] h-[51px] rounded-full bg-darkBlue flex justify-center items-center hover:bg-orange group"
+            value="2"
+          >
+            <span
+              class="text-base leading-6 tracking-[0.2px] font-overpass font-bold text-mediumGrey group-hover:text-white"
+              >2</span
+            >
+          </button>
+          <button
+            class="rating-btn w-[51px] h-[51px] rounded-full bg-darkBlue flex justify-center items-center hover:bg-orange group"
+            value="3"
+          >
+            <span
+              class="text-base leading-6 tracking-[0.2px] font-overpass font-bold text-mediumGrey group-hover:text-white"
+              >3</span
+            >
+          </button>
+          <button
+            class="rating-btn w-[51px] h-[51px] rounded-full bg-darkBlue flex justify-center items-center hover:bg-orange group"
+            value="4"
+          >
+            <span
+              class="text-base leading-6 tracking-[0.2px] font-overpass font-bold text-mediumGrey group-hover:text-white"
+              >4</span
+            >
+          </button>
+          <button
+            class="rating-btn w-[51px] h-[51px] rounded-full bg-darkBlue flex justify-center items-center hover:bg-orange group"
+            value="5"
+          >
+            <span
+              class="text-base leading-6 tracking-[0.2px] font-overpass font-bold text-mediumGrey group-hover:text-white"
+              >5</span
+            >
+          </button>
+        </div>
+        <button
+          id="submit-btn"
+          class="mt-8 w-full h-[45px] bg-orange rounded-[22.5px] hover:bg-white group"
+          disabled
+        >
+          <span
+            class="uppercase text-[15px] leading-[18.99px] tracking-[2px] font-overpass font-semibold text-white group-hover:text-orange"
+            >Submit</span
+          >
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

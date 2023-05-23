@@ -10,3 +10,4 @@ Challenges completed via [Frontend Mentor](https://www.frontendmentor.io/)
 | 2   | [Product preview card component](https://frontend-mentor-challenges.onrender.com/product-preview-card/) | [Link to GitHub repo](https://github.com/donth77/frontendmentor-challenges/tree/main/product-preview-card) |
 | 3   | [Results summary component](https://frontend-mentor-challenges.onrender.com/results-summary/)           | [Link to GitHub repo](https://github.com/donth77/frontendmentor-challenges/tree/main/results-summary)      |
 | 4   | [Article preview component](https://frontend-mentor-challenges.onrender.com/article-preview/)           | [Link to GitHub repo](https://github.com/donth77/frontendmentor-challenges/tree/main/article-preview)      |
+| 5   | [Interactive rating component](https://frontend-mentor-challenges.onrender.com/interactive-rating/)     | [Link to GitHub repo](https://github.com/donth77/frontendmentor-challenges/tree/main/interactive-rating/)  |
