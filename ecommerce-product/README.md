@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://frontend-mentor-challenges.onrender.com/](https://frontend-mentor-challenges.onrender.com/)
+- Live Site URL: [https://e-commerce-product-page-frontend-mentor.onrender.com/](https://e-commerce-product-page-frontend-mentor.onrender.com/)
 
 ## Process
 
