@@ -33,7 +33,6 @@ function Drawer() {
       <label
         htmlFor="open-menu"
         aria-haspopup="true"
-        role="button"
         aria-controls="menu"
         className="ml-6 mr-4 cursor-pointer sm:hidden"
         id="openmenu"

@@ -66,7 +66,7 @@ function ProductDetail() {
   };
 
   return (
-    <div className="h-full w-full sm:pt-[90px]">
+    <main className="h-full w-full sm:pt-[90px]">
       <div className="flex flex-col justify-center sm:flex-row">
         <div className="flex flex-col">
           <div
@@ -80,12 +80,14 @@ function ProductDetail() {
             <button
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white"
               onClick={decrementActiveIndex}
+              aria-label="Previous"
             >
               <PrevIcon className="ml-[-2px] scale-[0.75]" />
             </button>
             <button
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white "
               onClick={incrementActiveIndex}
+              aria-label="Next"
             >
               <NextIcon className="mr-[-2px] scale-[0.75]" />
             </button>
@@ -99,6 +101,7 @@ function ProductDetail() {
               }
             )}
             onClick={handleClickActiveImg}
+            alt="Product detail active image"
           />
 
           <div className="mt-8 hidden justify-between sm:flex">
@@ -121,6 +124,7 @@ function ProductDetail() {
                         "opacity-25": i === activeImgIndex,
                       }
                     )}
+                    alt={`Product detail thumbnail ${i}`}
                   />
                 </div>
               </div>
@@ -141,22 +145,23 @@ function ProductDetail() {
           </p>
           <div className="flex items-baseline justify-between sm:flex-col">
             <div className="mt-7 flex items-center">
-              <h3 className="font-kumbhSans text-[28px] font-bold">$125.00</h3>
+              <h2 className="font-kumbhSans text-[28px] font-bold">$125.00</h2>
               <div className="ml-4 mt-[6px] flex h-[27px] w-[51px] items-center justify-center rounded-md bg-paleOrange">
                 <span className="font-kumbhSans text-base font-bold font-bold text-orange">
                   50%
                 </span>
               </div>
             </div>
-            <h4 className="font-kumbhSans text-base font-bold leading-[26px] text-grayishBlue">
+            <h3 className="font-kumbhSans text-base font-bold leading-[26px] text-grayishBlue">
               <s>$250.00</s>
-            </h4>
+            </h3>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row">
             <div className="mr-4 flex h-[56px] w-full items-center rounded-lg bg-lightGrayishBlue sm:w-[157px]">
               <button
                 className="group flex h-full w-full cursor-pointer items-center justify-center"
                 onClick={decrementQuantity}
+                aria-label="Decrement"
               >
                 <MinusIcon className="fill-orange group-hover:fill-hoverOrange" />
               </button>
@@ -166,6 +171,7 @@ function ProductDetail() {
               <button
                 className="group flex h-full w-full cursor-pointer items-center justify-center"
                 onClick={incrementQuantity}
+                aria-label="Increment"
               >
                 <PlusIcon className="fill-orange group-hover:fill-hoverOrange" />
               </button>
@@ -188,7 +194,7 @@ function ProductDetail() {
         open={lightboxOpen}
         closeLightbox={closeLightbox}
       />
-    </div>
+    </main>
   );
 }
 

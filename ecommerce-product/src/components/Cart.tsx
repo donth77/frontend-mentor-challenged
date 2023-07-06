@@ -70,6 +70,7 @@ function Cart() {
                       <img
                         src={prod.thumnbnail}
                         className="mr-4 h-[50px] w-[50px] rounded-lg"
+                        alt={`${prod.name} thumbnail`}
                       />
                       <div className="flex flex-col">
                         <span className="font-kumbhSans text-base text-darkGrayishBlue">
@@ -89,6 +90,7 @@ function Cart() {
                     <button
                       className="flex h-full w-[33px] items-center justify-end"
                       onClick={() => removeProduct("1")}
+                      aria-label={"Remove"}
                     >
                       <TrashIcon />
                     </button>

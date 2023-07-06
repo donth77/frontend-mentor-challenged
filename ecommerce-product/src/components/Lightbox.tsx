@@ -97,12 +97,14 @@ function Lightbox({
             <button
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white"
               onClick={decrementActiveIndex}
+              aria-label="Previous"
             >
               <PrevIcon className="ml-[-2px] scale-[0.75]" />
             </button>
             <button
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white "
               onClick={incrementActiveIndex}
+              aria-label="Next"
             >
               <NextIcon className="mr-[-2px] scale-[0.75]" />
             </button>
@@ -110,6 +112,7 @@ function Lightbox({
           <img
             src={IMAGES[activeImgIndex]}
             className={classNames("h-[550px] w-[550px] rounded-xl")}
+            alt={"Lightbox active image"}
           />
           <div className="mt-10 flex w-[550px] justify-center pl-[31px]">
             {THUMBNAILS.map((img, i) => (
@@ -133,6 +136,7 @@ function Lightbox({
                   <img
                     src={img}
                     className={classNames("h-[88px] min-w-[88px] rounded-lg")}
+                    alt={`Lightbox thumbnail ${i}`}
                   />
                 </div>
               </div>
