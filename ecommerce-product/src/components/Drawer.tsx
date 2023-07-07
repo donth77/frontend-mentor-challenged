@@ -70,7 +70,7 @@ function Drawer() {
         </nav>
         <label htmlFor="open-menu" className="flex w-full"></label>
       </div>
-      <div className="pointer-events-none fixed top-0 z-[1] hidden h-full w-full animate-fadeIn bg-overlayBg peer-checked:block"></div>
+      <div className="pointer-events-none fixed top-0 z-[2] hidden h-full w-full animate-fadeIn bg-overlayBg peer-checked:block"></div>
     </>
   );
 }

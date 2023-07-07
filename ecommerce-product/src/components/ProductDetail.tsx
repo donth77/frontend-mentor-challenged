@@ -1,5 +1,8 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import classNames from "classnames";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
 import Lightbox from "./Lightbox";
 import { CartContext, Product } from "./CartProvider";
 import { IMAGES, SM_BREAKPOINT, THUMBNAILS } from "../constants";
@@ -13,19 +16,21 @@ function ProductDetail() {
   const [activeImgIndex, setActiveImgIndex] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const { active: cartActive, addProduct, openCart } = useContext(CartContext);
-
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const swiperRef = useRef<any>(null);
 
   const incrementActiveIndex = () => {
     setActiveImgIndex((activeImgIndex) =>
       activeImgIndex < IMAGES.length - 1 ? activeImgIndex + 1 : 0
     );
+    swiperRef?.current?.swiper?.slideNext();
   };
 
   const decrementActiveIndex = () => {
     setActiveImgIndex((activeImgIndex) =>
       activeImgIndex > 0 ? activeImgIndex - 1 : IMAGES.length - 1
     );
+    swiperRef?.current?.swiper?.slidePrev();
   };
 
   const incrementQuantity = () => {
@@ -71,7 +76,7 @@ function ProductDetail() {
         <div className="flex flex-col">
           <div
             className={classNames(
-              "absolute top-[200px]  my-[0px] flex w-full justify-between px-4 sm:hidden",
+              "absolute top-[200px] z-[1] my-[0px] flex w-full justify-between px-4 sm:hidden",
               {
                 "z-[-1]": cartActive,
               }
@@ -92,26 +97,44 @@ function ProductDetail() {
               <NextIcon className="mr-[-2px] scale-[0.75]" />
             </button>
           </div>
-          <img
-            src={IMAGES[activeImgIndex]}
-            className={classNames(
-              "h-[300px] object-cover object-top sm:h-[260px] sm:w-[260px] sm:cursor-pointer sm:rounded-xl md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px] xl:h-[445px] xl:w-[445px]",
-              {
-                "z-[-2]": cartActive,
-              }
-            )}
-            onClick={handleClickActiveImg}
-            alt="Product detail active image"
-          />
+          <Swiper
+            ref={swiperRef}
+            className="z-0 h-[300px] w-screen object-cover object-top sm:h-[260px]  sm:w-[260px] sm:cursor-pointer sm:rounded-xl md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px] xl:h-[445px] xl:w-[445px]"
+            slidesPerView={1}
+            spaceBetween={0}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            onActiveIndexChange={(swiper) =>
+              setActiveImgIndex(swiper.realIndex)
+            }
+          >
+            {IMAGES.map((img, i) => (
+              <SwiperSlide key={`Main image slide ${i}`}>
+                <img
+                  src={img}
+                  className="h-[300px] w-screen object-cover object-top sm:h-[260px] sm:w-[260px] sm:cursor-pointer  md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px] xl:h-[445px] xl:w-[445px]"
+                  onClick={handleClickActiveImg}
+                  alt="Product detail active image"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
           <div className="mt-8 hidden justify-between sm:flex">
             {THUMBNAILS.map((img, i) => (
               <div key={`thumb-${i}`} className="mr-[31px]">
                 <div
-                  className={classNames("rounded-lg ", {
-                    "border-2 border-orange ": i === activeImgIndex,
+                  className={classNames("rounded-lg border-2", {
+                    "border-orange ": i === activeImgIndex,
+                    "border-transparent": i != activeImgIndex,
                   })}
-                  onClick={() => setActiveImgIndex(i)}
+                  onClick={() => {
+                    swiperRef?.current?.swiper?.slideToLoop(i);
+                  }}
                 >
                   <img
                     src={img}
