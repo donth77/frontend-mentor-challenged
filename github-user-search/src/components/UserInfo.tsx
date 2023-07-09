@@ -9,12 +9,21 @@ import { User } from "../types";
 function UserInfo({
   isLoading,
   user,
+  userId,
 }: {
   isLoading: Accessor<boolean>;
   user: Resource<User | null>;
+  userId: Accessor<string | null>;
 }) {
   return (
-    <div class="w-full bg-snowWhite dark:bg-yankeesBlue rounded-2xl mt-6 shadow-xl p-6 pt-8 sm:p-10 lg:p-12 lg:pt-11 flex min-h-[32.3125rem] sm:min-h-[30.0625rem] lg:min-h-[27.75rem]">
+    <div
+      class={classNames(
+        "w-full bg-snowWhite dark:bg-yankeesBlue rounded-2xl mt-6 shadow-xl p-6 pt-8 sm:p-10 lg:p-12 lg:pt-11 flex min-h-[32.3125rem] sm:min-h-[30.0625rem] lg:min-h-[27.75rem]",
+        {
+          hidden: !userId(),
+        }
+      )}
+    >
       {isLoading() && (
         <div class="w-full flex justify-center items-center">
           <svg
@@ -75,9 +84,9 @@ function UserInfo({
           </div>
           <div class="flex flex-col mt-5 lg:mt-0 lg:ml-[9.625rem]">
             <p class="text-[0.8125rem] leading-[1.5625rem] sm:text-[0.9375rem] dark:text-white text-queenBlue overflow-hidden text-ellipsis max-h-[12.5rem]">
-              {user()?.bio || "This profile has no bio"}
+              {user()?.bio}
             </p>
-            <div class="bg-ghostWhite dark:bg-darkGunmetal w-full rounded-xl h-[5.3125rem] mt-8 flex px-8 items-center">
+            <div class="bg-ghostWhite dark:bg-darkGunmetal w-full rounded-xl h-[5.3125rem] mt-8 flex px-8 items-center justify-evenly sm:justify-normal">
               <div class="flex flex-col items-center sm:items-start mr-7 sm:mr-0 ml-2 sm:ml-0">
                 <h3 class="text-[0.6875rem] sm:text-[0.8125rem] dark:text-white text-queenBlue">
                   Repos
@@ -86,7 +95,7 @@ function UserInfo({
                   {user()?.public_repos}
                 </span>
               </div>
-              <div class="flex w-full sm:justify-evenly">
+              <div class="flex w-8/12 sm:w-full justify-evenly">
                 <div class="flex flex-col items-center sm:items-start mr-7 sm:mr-0">
                   <h3 class="text-[0.6875rem] sm:text-[0.8125rem] dark:text-white text-queenBlue">
                     Followers
@@ -105,7 +114,7 @@ function UserInfo({
                 </div>
               </div>
             </div>
-            <div class="flex flex-col sm:flex-row sm:mt-[1.875rem] lg:mt-[2.3125rem] sm:w-[90%] sm:justify-between mt-6">
+            <div class="flex flex-col sm:flex-row sm:mt-[1.875rem] lg:mt-[2.3125rem] sm:w-full sm:justify-between mt-6">
               <div class="flex flex-col sm:w-[55%]">
                 <span
                   title={user()?.location}
@@ -147,7 +156,11 @@ function UserInfo({
                   </span>
                   <a
                     class="ml-4 hover:underline overflow-hidden text-ellipsis whitespace-nowrap"
-                    href={user()?.blog}
+                    href={
+                      user()?.blog.startsWith("http")
+                        ? user()?.blog
+                        : `https://${user()?.blog}`
+                    }
                     target="_blank"
                   >
                     {user()?.blog || "Not Available"}
