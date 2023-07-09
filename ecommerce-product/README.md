@@ -1,4 +1,4 @@
-# Frontend Mentor - E-commerce product page solution
+# Frontend Mentor - E-commerce product page
 
 [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6)
 

@@ -1,4 +1,4 @@
-# Frontend Mentor - Article preview component solution
+# Frontend Mentor - Article preview component
 
 [Article preview component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT)
 
