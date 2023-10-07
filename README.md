@@ -13,3 +13,4 @@ Challenges completed via [Frontend Mentor](https://www.frontendmentor.io/)
 | 5   | [Interactive rating component](https://frontend-mentor-challenges.onrender.com/interactive-rating/)     | [Link to GitHub repo](https://github.com/donth77/frontendmentor-challenges/tree/main/interactive-rating/)  |
 | 6   | [E-commerce product page](https://e-commerce-product-page-frontend-mentor.onrender.com/)                | [Link to GitHub repo](https://github.com/donth77/frontendmentor-challenges/tree/main/ecommerce-product/)   |
 | 7   | [GitHub user search app](https://github-user-search-frontend-mentor.onrender.com/)                      | [Link to GitHub repo](https://github.com/donth77/frontendmentor-challenges/tree/main/github-user-search/)  |
+| 8   | [Clock info app](https://clock-app-frontend-mentor.onrender.com/)                                       | [Link to GitHub repo](https://github.com/donth77/frontendmentor-challenges/tree/main/clock-app/)           |
