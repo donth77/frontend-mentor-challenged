@@ -59,7 +59,7 @@
           method: "GET",
           headers: {
             Authorization: `Authorization: Client-ID ${
-              import.meta.env.VITE_API_ACCESS_KEY
+              import.meta.env.VITE_UNSPLASH_API_ACCESS_KEY
             }`,
             "Content-Type": "application/json",
           },

@@ -55,7 +55,11 @@
 
     if (ip) {
       try {
-        const resp = await fetch(`http://ip-api.com/json/${ip}`);
+        const resp = await fetch(
+          `https://ipgeolocation.abstractapi.com/v1/?api_key=${
+            import.meta.env.VITE_GEO_API_KEY
+          }`,
+        );
         const json = await resp.json();
         if (resp.status === 200) {
           city = json.city;
