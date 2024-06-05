@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import RefreshIcon from "../assets/refresh.svelte";
   import classNames from "classnames";
-  import { get } from "svelte/store";
 
   export let drawerActive = false;
   let isSpinning = false;

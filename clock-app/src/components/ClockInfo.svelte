@@ -56,10 +56,10 @@
     if (ip) {
       try {
         const resp = await fetch(`http://ip-api.com/json/${ip}`);
-        const respJson = await resp.json();
+        const json = await resp.json();
         if (resp.status === 200) {
-          city = respJson.city;
-          country = respJson.country;
+          city = json.city;
+          country = json.country;
         }
       } catch (e) {
         console.error(e);
@@ -96,7 +96,7 @@
 
   onMount(getTimeInfo);
 
-  let timer: number | null = null;
+  let timer: NodeJS.Timeout | null = null;
   setTimeout(() => {
     getTimeInfo();
     timer = setInterval(() => {
@@ -144,7 +144,7 @@
         </h2>
       </div>
       <span
-        class="text-[6.25rem] font-bold text-white sm:text-[10.938rem] sm:leading-[10.938rem] xl:text-[12.5rem] xl:leading-[12.5rem]"
+        class="text-[6.25rem] font-bold text-white sm:text-[7rem] sm:leading-[7rem] xl:text-[9rem] xl:leading-[9rem]"
         >{@html timeStr}</span
       ><span
         class="ml-1 text-[0.938rem] font-light text-white sm:text-[2rem] xl:text-[2.5rem]"
