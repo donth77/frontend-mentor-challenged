@@ -1,5 +1,11 @@
 <script lang="ts">
   import SearchIcon from "../assets/SearchIcon.svelte";
+
+  export let searchText = "";
+
+  function handleInput(event: Event) {
+    searchText = (event?.target as HTMLInputElement)?.value;
+  }
 </script>
 
 <div
@@ -7,7 +13,8 @@
 >
   <SearchIcon />
   <input
-    class="placeholder-cloud ml-[1.625rem] text-xs text-cinder focus:outline-none dark:bg-darkSlateGrey dark:text-white dark:placeholder-white"
+    class="ml-[1.625rem] w-full text-xs text-cinder placeholder-cloud focus:outline-none dark:bg-darkSlateGrey dark:text-white dark:placeholder-white"
     placeholder="Search for a country…"
+    on:input={handleInput}
   />
 </div>
