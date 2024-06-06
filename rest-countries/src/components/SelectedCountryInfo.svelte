@@ -103,11 +103,11 @@
         <div class="mt-8 flex flex-col md:mt-16 lg:flex-row lg:gap-3">
           {#if borderCountryNames}
             <h2
-              class="mb-4 text-base font-semibold text-cinder dark:text-white"
+              class="mb-4 text-base font-semibold text-cinder dark:text-white lg:min-w-[130px]"
             >
               Border Countries:
             </h2>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 lg:max-w-[600px]">
               {#each borderCountryNames as borderCountryName, index}
                 <button
                   class="flex h-[28px] w-[96px] items-center justify-center bg-white text-center text-xs font-light text-cinder shadow-[0_0_4px_1px_rgba(0,0,0,0.10)] hover:bg-gray-50 dark:bg-darkSlateGrey dark:text-white dark:hover:bg-gray-700"

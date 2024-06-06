@@ -15,6 +15,7 @@
   class="h-[21rem] w-[16.5rem] rounded-md bg-white shadow-[0_0_7px_2px_rgba(0,0,0,0.03)] hover:cursor-pointer dark:bg-darkSlateGrey"
 >
   <button
+    title="Country Card Button"
     class="absolute h-[21rem] w-[16.5rem] rounded-md bg-black opacity-0 hover:opacity-10 dark:bg-white"
     on:click={() => setSelectedCountry(countryData)}
   />

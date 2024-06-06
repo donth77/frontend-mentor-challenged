@@ -40,7 +40,7 @@
   }
 </script>
 
-<div class="group relative mb-8 inline-block md:mb-0 md:ml-4">
+<div class="group relative z-10 mb-8 inline-block md:mb-0 md:ml-4">
   <button
     class="shadotext-w-[0_2px_9px_0_rgba(0,0,0,0.05)] flex h-[48px] w-[200px] items-center justify-between rounded-md bg-white p-2 px-6 text-left text-xs font-normal text-cinder focus:outline-none dark:bg-darkSlateGrey dark:text-white"
     ><span bind:this={selectTextEl}>{placeholderText}</span>
