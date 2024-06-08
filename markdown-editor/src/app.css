@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+@layer components {
+  .action-btn {
+    @apply flex items-center justify-center gap-2 rounded-[4px] bg-emergencyZone text-center text-[0.938rem] text-white hover:bg-melonRed;
+  }
+
+  .preview-html {
+    * {
+      font-family: "Roboto Slab";
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-antarcticDeep;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 400;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    h4 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    h5 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    h6 {
+      font-size: 14px;
+      font-weight: 700;
+      @apply text-emergencyZone;
+    }
+    ul {
+      list-style: inside;
+    }
+    p,
+    li {
+      font-size: 14px;
+      @apply text-adeptusBattlegrey;
+      line-height: 24px;
+    }
+    li {
+      font-family: "Roboto Slab";
+      margin-left: 24px;
+      margin-bottom: 4px;
+    }
+    ol {
+      counter-reset: list-counter;
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ol > li {
+      counter-increment: list-counter;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+    ol > li::before {
+      content: counter(list-counter) ". ";
+      position: absolute;
+      left: 0;
+      font-weight: normal;
+      font-size: 14px;
+      @apply text-adeptusBattlegrey;
+    }
+    li::marker {
+      @apply text-emergencyZone;
+    }
+
+    blockquote {
+      padding: 24px;
+      border-radius: 4px;
+      border-left: 4px solid #e46643;
+      @apply bg-whiteSmoke;
+    }
+
+    blockquote > p {
+      margin: 0;
+      font-weight: 700;
+      @apply text-antarcticDeep;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    pre {
+      padding: 24px;
+      border-radius: 4px;
+      @apply bg-whiteSmoke;
+    }
+
+    code {
+      font-family: "Roboto Mono";
+      font-size: 14px;
+    }
+  }
+}
