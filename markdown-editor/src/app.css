@@ -5,6 +5,7 @@
 @layer base {
   html {
     font-family: "Roboto", sans-serif;
+    overflow: hidden;
   }
 }
 
@@ -25,7 +26,7 @@
     h4,
     h5,
     h6 {
-      @apply text-antarcticDeep;
+      @apply text-antarcticDeep dark:text-white;
     }
 
     h1 {
@@ -51,7 +52,7 @@
     h6 {
       font-size: 14px;
       font-weight: 700;
-      @apply text-emergencyZone;
+      @apply text-emergencyZone dark:text-emergencyZone;
     }
     ul {
       list-style: inside;
@@ -59,7 +60,7 @@
     p,
     li {
       font-size: 14px;
-      @apply text-adeptusBattlegrey;
+      @apply text-adeptusBattlegrey dark:text-ashBlue;
       line-height: 24px;
     }
     li {
@@ -94,13 +95,13 @@
       padding: 24px;
       border-radius: 4px;
       border-left: 4px solid #e46643;
-      @apply bg-whiteSmoke;
+      @apply bg-whiteSmoke dark:bg-caviar;
     }
 
     blockquote > p {
       margin: 0;
       font-weight: 700;
-      @apply text-antarcticDeep;
+      @apply text-antarcticDeep dark:text-white;
     }
 
     a {
@@ -110,12 +111,13 @@
     pre {
       padding: 24px;
       border-radius: 4px;
-      @apply bg-whiteSmoke;
+      @apply bg-whiteSmoke dark:bg-caviar;
     }
 
     code {
       font-family: "Roboto Mono";
       font-size: 14px;
+      @apply dark:text-white;
     }
   }
 }

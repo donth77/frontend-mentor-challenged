@@ -34,7 +34,7 @@
 <Sidebar />
 
 <div
-  class="duration-400 flex h-screen w-full transform flex-col transition ease-in-out {sidebarOpen
+  class="flex h-screen w-full transform flex-col transition duration-400 ease-in-out {sidebarOpen
     ? 'translate-x-[250px]'
     : ''}"
 >

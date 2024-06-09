@@ -23,19 +23,19 @@
       >
         <span
           aria-hidden="true"
-          class="duration-400 absolute block h-0.5 w-[30px] transform bg-white transition ease-in-out {sidebarOpen
+          class="absolute block h-0.5 w-[30px] transform bg-white transition duration-400 ease-in-out {sidebarOpen
             ? 'rotate-45'
             : ' -translate-y-2'}"
         ></span>
         <span
           aria-hidden="true"
-          class="duration-400 absolute block h-0.5 w-[30px] transform bg-white transition ease-in-out {sidebarOpen
+          class="absolute block h-0.5 w-[30px] transform bg-white transition duration-400 ease-in-out {sidebarOpen
             ? 'opacity-0'
             : ''}"
         ></span>
         <span
           aria-hidden="true"
-          class="duration-400 absolute block h-0.5 w-[30px] transform bg-white transition ease-in-out {sidebarOpen
+          class="absolute block h-0.5 w-[30px] transform bg-white transition duration-400 ease-in-out {sidebarOpen
             ? '-rotate-45'
             : ' translate-y-2'}"
         ></span>
@@ -62,10 +62,15 @@
     </div>
 
     <div class="flex items-center">
-      <button class="p-6" title="Delete button">
-        <img src={trashIcon} alt="Delete Icon" />
+      <button class="group p-6" title="Delete button">
+        <svg width="18" height="20" xmlns="http://www.w3.org/2000/svg"
+          ><path
+            class="fill-adeptusBattlegrey group-hover:fill-emergencyZone"
+            d="M7 16a1 1 0 0 0 1-1V9a1 1 0 1 0-2 0v6a1 1 0 0 0 1 1ZM17 4h-4V3a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v1H1a1 1 0 1 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V6h1a1 1 0 0 0 0-2ZM7 3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1H7V3Zm7 14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6h10v11Zm-3-1a1 1 0 0 0 1-1V9a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z"
+          /></svg
+        >
       </button>
-      <button class="action-btn mr-4 h-10 w-10 sm:w-[152px]">
+      <button class="action-btn mr-4 hidden h-10 w-10 sm:w-[152px]">
         <img src={saveIcon} alt="Save Icon" />
         <span class="hidden sm:block">Save Changes</span></button
       >

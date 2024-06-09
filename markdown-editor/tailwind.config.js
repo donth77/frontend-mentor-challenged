@@ -15,6 +15,7 @@ export default {
         whiteSmoke: "#F5F5F5",
         emergencyZone: "#E46643",
         melonRed: "#F39765",
+        sooty: "#141414",
       },
       fontFamily: {
         commissioner: ['"Commissioner"', "sans-serif"],

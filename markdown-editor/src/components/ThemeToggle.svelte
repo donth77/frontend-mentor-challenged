@@ -29,6 +29,11 @@
       theme = LIGHT;
       localStorage.setItem(THEME, LIGHT);
     }
+
+    const event = new CustomEvent("themeChange", {
+      detail: { key: THEME, value: theme },
+    });
+    window.dispatchEvent(event);
   }
 
   onMount(async () => {
@@ -49,7 +54,7 @@
     on:click={toggleTheme}
   >
     <div
-      class="duration-400 h-3 w-3 transform rounded-full bg-white transition {theme ===
+      class="h-3 w-3 transform rounded-full bg-white transition duration-400 {theme ===
       LIGHT
         ? 'translate-x-6'
         : ''}"
