@@ -149,7 +149,7 @@
   </svelte:fragment>
 </Modal>
 
-<header class="flex h-[72px] bg-caviar">
+<header class="flex h-[72px] min-h-[72px] bg-caviar">
   <div class="flex w-full justify-between">
     <div class="flex w-full">
       <button
