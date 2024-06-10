@@ -154,6 +154,7 @@
   <div class="flex w-full justify-between">
     <div class="flex w-full">
       <button
+        aria-label="Toggle sidebar"
         class="flex h-full w-[72px] items-center justify-center bg-antarcticDeep text-gray-500 hover:bg-emergencyZone focus:outline-none"
         on:click={onHeaderClick}
       >
@@ -193,6 +194,7 @@
             >Document Name</span
           >
           <input
+            aria-label="Rename document"
             class="w-full border-b bg-caviar text-[0.938rem] text-white caret-emergencyZone focus:outline-none {isTitleFocused
               ? 'border-white'
               : 'border-transparent'}"
