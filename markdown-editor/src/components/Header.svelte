@@ -54,7 +54,6 @@
   }
 
   async function deleteCurrentDocument() {
-    console.log("deleteCurrentDocument");
     showModal = false;
     try {
       const currentDoc: MarkdownDocument | null =
@@ -72,11 +71,8 @@
             }
           })
           .then(async function (newDoc) {
-            console.log("Deleted then found new doc to switch to:");
-            console.log(newDoc);
-
             const dbSize = await localforage.length();
-            console.log(`dbSize: ${dbSize}`);
+
             showDeleteBtn = dbSize > 2;
 
             localforage.setItem(CURRENT_DOC_KEY, newDoc);
@@ -93,10 +89,7 @@
   }
 
   function handleRenameInput(event: Event) {
-    console.log(event);
     const newTitle = (event?.target as HTMLInputElement)?.value.trim();
-    console.log(newTitle);
-    console.log(newTitle.length);
     if (newTitle) {
       updateCurrentDocTitle(newTitle);
     }
@@ -108,8 +101,14 @@
     }
   }
 
-  function handleSwitchDocument(event: any) {
+  async function handleSwitchDocument(event: any) {
     const newDoc: MarkdownDocument = event?.detail;
+    try {
+      const dbSize = await localforage.length();
+      showDeleteBtn = dbSize > 2;
+    } catch (err) {
+      console.error(err);
+    }
 
     docTitle = newDoc.title;
   }
@@ -150,7 +149,7 @@
   </svelte:fragment>
 </Modal>
 
-<header class="flex h-[72px] bg-caviar">
+<header class="flex h-[72px] min-h-[72px] bg-caviar">
   <div class="flex w-full justify-between">
     <div class="flex w-full">
       <button

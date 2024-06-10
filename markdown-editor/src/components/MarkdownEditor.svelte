@@ -162,7 +162,7 @@
       </button>
     </div>
 
-    <div id="braceEditor" class="editor h-[87.2vh] w-full"></div>
+    <div id="braceEditor" class="editor h-[90%] w-full"></div>
   </div>
   <div
     class=" {showPreview
@@ -202,7 +202,7 @@
     <div class={showPreview ? "flex justify-center" : ""}>
       <div class={showPreview ? "w-full md:w-2/3 lg:w-1/2" : ""}>
         <div
-          class="preview-html h-[87.2vh] p-6 {showPreview
+          class="preview-html h-[90%] p-6 {showPreview
             ? ''
             : 'overflow-y-scroll'}"
         >
