@@ -1,11 +1,23 @@
 <script lang="ts">
-  import { onMount, setContext, onDestroy } from "svelte";
-  import ace from "brace";
+  import { onMount, onDestroy } from "svelte";
+  import localforage from "localforage";
+  import ace, { edit } from "brace";
   import "brace/mode/markdown";
   import "brace/theme/chrome";
   import "brace/theme/twilight";
   import { marked } from "marked";
   import DOMPurify from "dompurify";
+  import toast from "svelte-french-toast";
+  import type { MarkdownDocument } from "../types";
+  import {
+    SWITCH_DOC_EVENT_STR,
+    CURRENT_DOC_KEY,
+    LIGHT_STR,
+    SAVE_CHANGES_EVENT_STR,
+    THEME_CHANGE_EVENT_STR,
+  } from "../constants";
+
+  export let content: string;
 
   const ACE_LIGHT_THEME = "ace/theme/chrome";
   const ACE_DARK_THEME = "ace/theme/twilight";
@@ -18,13 +30,67 @@
     showPreview = !showPreview;
   }
 
-  onMount(() => {
+  async function renderEditorContent() {
+    const markdown = editor.getValue();
+    const html = await marked.parse(markdown);
+    const htmlWithBreak = html + "<br />";
+    const sanitizedHtml = DOMPurify.sanitize(htmlWithBreak);
+
+    previewHtml = sanitizedHtml;
+  }
+
+  function handleChangeTheme(event: any) {
+    const newTheme = event?.detail;
+    if (newTheme === LIGHT_STR) {
+      editor.setTheme(ACE_LIGHT_THEME);
+    } else {
+      editor.setTheme(ACE_DARK_THEME);
+    }
+  }
+
+  async function handleSaveChanges() {
+    try {
+      const currentDoc: MarkdownDocument | null =
+        await localforage.getItem(CURRENT_DOC_KEY);
+
+      if (currentDoc) {
+        const newDoc = {
+          ...currentDoc,
+          body: editor.getValue(),
+        };
+        localforage.setItem(CURRENT_DOC_KEY, newDoc);
+        localforage.setItem(String(currentDoc.id), newDoc);
+
+        toast.success("Saved 🎉");
+      }
+    } catch (err) {
+      console.error(err);
+
+      toast.error("Failed to save 😟");
+    }
+  }
+
+  function handleSwitchDocument(event: any) {
+    const newDoc: MarkdownDocument = event?.detail;
+    const newContent = newDoc.body;
+    if (editor) {
+      editor.setValue(newContent, -1);
+    }
+  }
+
+  $: {
+    if (editor) {
+      editor.setValue(content, -1);
+    }
+  }
+
+  onMount(async () => {
     editor = ace.edit("braceEditor");
     editor.setShowPrintMargin(false);
     editor.getSession().setMode("ace/mode/markdown");
 
     const theme = localStorage.getItem("theme");
-    if (theme === "light") {
+    if (theme === LIGHT_STR) {
       editor.setTheme(ACE_LIGHT_THEME);
     } else {
       editor.setTheme(ACE_DARK_THEME);
@@ -37,28 +103,26 @@
       wrapMethod: "text",
     });
 
-    editor.addEventListener("change", async () => {
-      const markdown = editor.getValue();
-      const html = await marked.parse(markdown);
-      const htmlWithBreak = html + "<br />";
-      const sanitizedHtml = DOMPurify.sanitize(htmlWithBreak);
+    editor.setValue(content, -1);
+    // editor.focus();
+    await renderEditorContent();
 
-      previewHtml = sanitizedHtml;
-    });
+    editor.addEventListener("change", renderEditorContent);
+    window.addEventListener(THEME_CHANGE_EVENT_STR, handleChangeTheme);
+    window.addEventListener(SAVE_CHANGES_EVENT_STR, handleSaveChanges);
+    window.addEventListener(SWITCH_DOC_EVENT_STR, handleSwitchDocument);
+  });
 
-    window.addEventListener("themeChange", (event: any) => {
-      const newTheme = event?.detail?.value;
-      if (newTheme === "light") {
-        editor.setTheme(ACE_LIGHT_THEME);
-      } else {
-        editor.setTheme(ACE_DARK_THEME);
-      }
-    });
+  onDestroy(() => {
+    editor.removeEventListener("change", renderEditorContent);
+    window.removeEventListener(THEME_CHANGE_EVENT_STR, handleChangeTheme);
+    window.removeEventListener(SAVE_CHANGES_EVENT_STR, handleSaveChanges);
+    window.removeEventListener(SWITCH_DOC_EVENT_STR, handleSwitchDocument);
   });
 </script>
 
 <div
-  class="dark:bg-sooty flex bg-white {showPreview
+  class="flex bg-white dark:bg-sooty {showPreview
     ? 'justify-center overflow-y-scroll'
     : ''}"
 >
@@ -103,7 +167,7 @@
   <div
     class=" {showPreview
       ? 'w-full'
-      : 'hidden w-1/2'} dark:bg-sooty bg-white sm:block"
+      : 'hidden w-1/2'} bg-white dark:bg-sooty sm:block"
   >
     <div
       class="flex h-[42px] justify-between bg-whiteSmoke px-4 py-3 dark:bg-inkwellInception"

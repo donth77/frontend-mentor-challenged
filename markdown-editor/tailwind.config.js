@@ -16,14 +16,27 @@ export default {
         emergencyZone: "#E46643",
         melonRed: "#F39765",
         sooty: "#141414",
+        doctor: "#F9F9F9",
+        steam: "#DDD",
       },
       fontFamily: {
         commissioner: ['"Commissioner"', "sans-serif"],
         robotoSlab: ['"Roboto Slab"', "serif"],
         robotoMono: ['"Roboto Mono"', "monospace"],
       },
-      keyframes: {},
-      animation: {},
+      keyframes: {
+        fadeOut: {
+          "0%": {
+            opacity: "1",
+          },
+          "100%": {
+            opacity: "0",
+          },
+        },
+      },
+      animation: {
+        fadeOut: "fadeOut 200ms ease-in",
+      },
       transitionDuration: {
         400: "400ms",
       },

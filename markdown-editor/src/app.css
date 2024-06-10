@@ -6,6 +6,26 @@
   html {
     font-family: "Roboto", sans-serif;
     overflow: hidden;
+
+    .sidebar-scrollbar::-webkit-scrollbar {
+      width: 8px;
+      height: 12px;
+    }
+
+    .sidebar-scrollbar::-webkit-scrollbar-track {
+      /* background: #f5f5f5; */
+      @apply bg-inkwellInception;
+      border-radius: 10px;
+    }
+
+    .sidebar-scrollbar::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      @apply bg-gray-600;
+    }
+
+    .loading-overlay {
+      animation-delay: 250ms;
+    }
   }
 }
 
@@ -14,12 +34,14 @@
     @apply flex items-center justify-center gap-2 rounded-[4px] bg-emergencyZone text-center text-[0.938rem] text-white hover:bg-melonRed;
   }
 
+  /* Rendered HTML Styles */
   .preview-html {
     * {
       font-family: "Roboto Slab";
       margin-bottom: 20px;
     }
 
+    /* Headings */
     h1,
     h2,
     h3,
@@ -30,38 +52,40 @@
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 2rem;
       font-weight: 700;
     }
     h2 {
-      font-size: 28px;
+      font-size: 1.75rem;
       font-weight: 400;
     }
     h3 {
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: 700;
     }
     h4 {
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 700;
     }
     h5 {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 700;
     }
     h6 {
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 700;
       @apply text-emergencyZone dark:text-emergencyZone;
     }
+
+    /* Lists, Paragraph */
     ul {
       list-style: inside;
     }
     p,
     li {
-      font-size: 14px;
+      font-size: 0.875rem;
       @apply text-adeptusBattlegrey dark:text-ashBlue;
-      line-height: 24px;
+      line-height: 1.5rem;
     }
     li {
       font-family: "Roboto Slab";
@@ -84,17 +108,24 @@
       position: absolute;
       left: 0;
       font-weight: normal;
-      font-size: 14px;
+      font-size: 0.875rem;
       @apply text-adeptusBattlegrey;
     }
     li::marker {
       @apply text-emergencyZone;
     }
 
+    /* Anchor */
+    a {
+      text-decoration: underline;
+    }
+
+    /* Block Quote */
     blockquote {
       padding: 24px;
       border-radius: 4px;
-      border-left: 4px solid #e46643;
+      /* border-left: 4px solid #e46643; */
+      @apply border-l-4 border-emergencyZone;
       @apply bg-whiteSmoke dark:bg-caviar;
     }
 
@@ -104,10 +135,7 @@
       @apply text-antarcticDeep dark:text-white;
     }
 
-    a {
-      text-decoration: underline;
-    }
-
+    /* Code Block */
     pre {
       padding: 24px;
       border-radius: 4px;
@@ -116,8 +144,74 @@
 
     code {
       font-family: "Roboto Mono";
-      font-size: 14px;
+      font-size: 0.875rem;
+      text-wrap: balance;
       @apply dark:text-white;
+    }
+
+    /* Table */
+    table {
+      @apply border-steam border;
+      @apply dark:text-white;
+    }
+
+    table > tbody > tr > td,
+    table > tbody > tr > th,
+    table > tfoot > tr > td,
+    table > tfoot > tr > th,
+    table > thead > tr > td,
+    table > thead > tr > th {
+      @apply border-steam border;
+    }
+
+    table > thead > tr > td,
+    table > thead > tr > th {
+      border-bottom-width: 2px;
+    }
+
+    table,
+    table > thead > tr > th,
+    table > thead > tr > td,
+    table > tbody > tr > th,
+    table > tbody > tr > td,
+    table > tfoot > tr > th,
+    table > tfoot > tr > td {
+      @apply border-steam border;
+    }
+
+    table > thead > tr > th,
+    table > thead > tr > td {
+      border-bottom-width: 2px;
+    }
+
+    table > tbody > tr:nth-of-type(odd) {
+      @apply bg-doctor dark:bg-gray-950;
+    }
+
+    table > tbody > tr:nth-child(odd) > td,
+    table > tbody > tr:nth-child(odd) > th {
+      @apply bg-doctor dark:bg-gray-950;
+    }
+
+    table > tbody > tr:nth-of-type(odd) {
+      @apply bg-doctor dark:bg-gray-950;
+    }
+
+    table > thead > tr > th {
+      padding: 8px;
+      line-height: 1.4285714;
+      @apply border-steam border;
+    }
+
+    table > thead > tr > td,
+    table > tbody > tr > th,
+    table > tbody > tr > td,
+    table > tfoot > tr > th,
+    table > tfoot > tr > td {
+      padding: 8px;
+      line-height: 1.4285714;
+      vertical-align: top;
+      @apply border-steam border;
     }
   }
 }
